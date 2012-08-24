@@ -1,0 +1,527 @@
+{
+    "project": {},
+    "files": {
+        "js\\using.0.4.3.js": {
+            "name": "js\\using.0.4.3.js",
+            "modules": {},
+            "classes": {
+                "Using": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "js\\using.class.0.1.js": {
+            "name": "js\\using.class.0.1.js",
+            "modules": {
+                "Using.Modules": 1,
+                "Using.Class": 1
+            },
+            "classes": {
+                "Using.Class": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "js\\using.config.js": {
+            "name": "js\\using.config.js",
+            "modules": {
+                "Using.Config": 1
+            },
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        }
+    },
+    "modules": {
+        "Using.Modules": {
+            "name": "Using.Modules",
+            "submodules": {},
+            "classes": {
+                "Using": 1
+            },
+            "fors": {},
+            "namespaces": {},
+            "tag": "module",
+            "file": "js\\using.0.4.3.js",
+            "line": 115,
+            "description": "可用于模块的命名空间"
+        },
+        "Using.Class": {
+            "name": "Using.Class",
+            "submodules": {},
+            "classes": {
+                "Using.Class": 1
+            },
+            "fors": {},
+            "namespaces": {},
+            "tag": "module",
+            "file": "js\\using.class.0.1.js",
+            "line": 16,
+            "description": "UsingJS中封装的用于创建类的对象"
+        },
+        "Using.Config": {
+            "name": "Using.Config",
+            "submodules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {},
+            "tag": "module",
+            "file": "js\\using.config.js",
+            "line": 1,
+            "description": "用于配置模块对应JS文件的路径 省去.js后缀"
+        }
+    },
+    "classes": {
+        "Using": {
+            "name": "Using",
+            "shortname": "Using",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Using.Modules",
+            "file": "js\\using.0.4.3.js",
+            "line": 115,
+            "description": "Using 用于实现JS模块的动态加载",
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "需要加载的模块名",
+                    "description": "对应Using.Config中的key",
+                    "type": "String"
+                }
+            ]
+        },
+        "Using.Class": {
+            "name": "Using.Class",
+            "shortname": "Using.Class",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Using.Class",
+            "namespace": "",
+            "file": "js\\using.class.0.1.js",
+            "line": 16,
+            "description": "UsingJS中封装的用于创建类的对象"
+        }
+    },
+    "classitems": [
+        {
+            "file": "js\\using.0.4.3.js",
+            "line": 9,
+            "description": "私有(内部)变量 用于配置using.config.js的路径",
+            "itemtype": "attribute",
+            "name": "configPath",
+            "type": "{String}",
+            "access": "private",
+            "tagname": "",
+            "class": "Using"
+        },
+        {
+            "file": "js\\using.0.4.3.js",
+            "line": 16,
+            "description": "私有(内部)变量 用于保存DOM结构加载完毕之后需要执行的函数集合",
+            "itemtype": "attribute",
+            "name": "readyList",
+            "type": "{Array}",
+            "access": "private",
+            "tagname": "",
+            "class": "Using"
+        },
+        {
+            "file": "js\\using.0.4.3.js",
+            "line": 23,
+            "description": "私有(内部)变量 用于保存需要且还未加载的模块名(Using.Config中的key)",
+            "itemtype": "attribute",
+            "name": "moduleList",
+            "type": "{Array}",
+            "access": "private",
+            "tagname": "",
+            "class": "Using"
+        },
+        {
+            "file": "js\\using.0.4.3.js",
+            "line": 30,
+            "description": "私有(内部)变量 用于保存已加载的模块名(Using.Config中的key)",
+            "itemtype": "attribute",
+            "name": "loadedModuleList",
+            "type": "{Array}",
+            "access": "private",
+            "tagname": "",
+            "class": "Using"
+        },
+        {
+            "file": "js\\using.0.4.3.js",
+            "line": 37,
+            "description": "私有(内部)变量 用于保存模块加载完毕之后需要执行的回调函数(集合)",
+            "itemtype": "attribute",
+            "name": "asynQueue",
+            "type": "{Array}",
+            "access": "private",
+            "tagname": "",
+            "class": "Using"
+        },
+        {
+            "file": "js\\using.0.4.3.js",
+            "line": 44,
+            "description": "私有(内部)函数 用于处理DOMContentLoaded事件的IE兼容",
+            "itemtype": "method",
+            "name": "_domReady",
+            "access": "private",
+            "tagname": "",
+            "class": "Using"
+        },
+        {
+            "file": "js\\using.0.4.3.js",
+            "line": 58,
+            "description": "私有(内部)函数 逐一执行DOMContentLoaded事件中缓存的所有函数 依赖readyList集合",
+            "itemtype": "method",
+            "name": "_ready",
+            "access": "private",
+            "tagname": "",
+            "class": "Using"
+        },
+        {
+            "file": "js\\using.0.4.3.js",
+            "line": 71,
+            "description": "私有(内部)函数 判断集合中是否包含指定的元素",
+            "itemtype": "method",
+            "name": "_exist",
+            "params": [
+                {
+                    "name": "集合",
+                    "description": "",
+                    "type": "Array"
+                },
+                {
+                    "name": "任意类型的元素",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "存在为true 不存在为false",
+                "type": "Boolean"
+            },
+            "access": "private",
+            "tagname": "",
+            "class": "Using"
+        },
+        {
+            "file": "js\\using.0.4.3.js",
+            "line": 90,
+            "description": "私有(内部)函数 执行所有异步操作中缓存的函数 依赖asynQueue队列",
+            "itemtype": "method",
+            "name": "_execAsyn",
+            "access": "private",
+            "tagname": "",
+            "class": "Using"
+        },
+        {
+            "file": "js\\using.0.4.3.js",
+            "line": 122,
+            "itemtype": "property",
+            "name": "version",
+            "type": "{String} 当前UsingJS的版本",
+            "class": "Using"
+        },
+        {
+            "file": "js\\using.0.4.3.js",
+            "line": 130,
+            "itemtype": "property",
+            "name": "Using.fn",
+            "type": "{Object} Using.prototype的别名",
+            "default": "Using.prototype",
+            "class": "Using"
+        },
+        {
+            "file": "js\\using.0.4.3.js",
+            "line": 136,
+            "description": "Using初始化函数 Using原型中的函数",
+            "itemtype": "method",
+            "name": "Using.fn.initialize",
+            "params": [
+                {
+                    "name": "需要加载的模块名",
+                    "description": "对应Using.Config中的key",
+                    "type": "String"
+                }
+            ],
+            "class": "Using"
+        },
+        {
+            "file": "js\\using.0.4.3.js",
+            "line": 144,
+            "description": "ajax异步请求 Using原型中的函数",
+            "itemtype": "method",
+            "name": "Using.fn.ajax",
+            "params": [
+                {
+                    "name": "需要加载模块的路径",
+                    "description": "对应Using.Config中的value",
+                    "type": "String"
+                },
+                {
+                    "name": "请求完毕之后的回调函数",
+                    "description": "",
+                    "type": "Function"
+                }
+            ],
+            "class": "Using"
+        },
+        {
+            "file": "js\\using.0.4.3.js",
+            "line": 173,
+            "description": "遍历需要加载的模块文件 Using原型中的函数",
+            "itemtype": "method",
+            "name": "Using.fn.script",
+            "params": [
+                {
+                    "name": "指定数量(moduleList)的模块加载完毕之后执行的回调函数",
+                    "description": "",
+                    "type": "Function"
+                }
+            ],
+            "class": "Using"
+        },
+        {
+            "file": "js\\using.0.4.3.js",
+            "line": 205,
+            "description": "封装页面DOM结构加载完毕之后需要执行的函数 可以调用任意次 Using的静态函数",
+            "itemtype": "method",
+            "name": "Using.ready",
+            "params": [
+                {
+                    "name": "页面加载完毕之后需要执行的函数",
+                    "description": "",
+                    "type": "Function"
+                }
+            ],
+            "class": "Using"
+        },
+        {
+            "file": "js\\using.0.4.3.js",
+            "line": 223,
+            "description": "通知Using进行模块加载 请最好将代码都放置在Using.asyn函数中 以避免造成由异步请求带来的找不到对象异常 Using的静态函数",
+            "itemtype": "method",
+            "name": "Using.asyn",
+            "params": [
+                {
+                    "name": "模块加载完毕之后的回调函数",
+                    "description": "",
+                    "type": "Function"
+                }
+            ],
+            "class": "Using"
+        },
+        {
+            "file": "js\\using.class.0.1.js",
+            "line": 22,
+            "itemtype": "property",
+            "name": "Using.Class.fn",
+            "type": "{Object} Using.prototype的别名",
+            "default": "Using.Class.prototype",
+            "class": "Using.Class",
+            "module": "Using.Class"
+        },
+        {
+            "file": "js\\using.class.0.1.js",
+            "line": 28,
+            "description": "代理 给需要代理的函数做this替换",
+            "itemtype": "method",
+            "name": "Using.Class.proxy",
+            "params": [
+                {
+                    "name": "需要",
+                    "description": "",
+                    "type": "Function"
+                },
+                {
+                    "name": "替换的对象",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "class": "Using.Class",
+            "module": "Using.Class"
+        },
+        {
+            "file": "js\\using.class.0.1.js",
+            "line": 39,
+            "description": "创建类的函数",
+            "itemtype": "method",
+            "name": "Using.Class.create",
+            "params": [
+                {
+                    "name": "类名",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "构造函数",
+                    "description": "可选参数",
+                    "type": "Object"
+                }
+            ],
+            "class": "Using.Class",
+            "module": "Using.Class"
+        },
+        {
+            "file": "js\\using.class.0.1.js",
+            "line": 46,
+            "description": "用于将需要创建的类缓存 并添加公用函数",
+            "itemtype": "attribute",
+            "name": "F",
+            "type": "{Function}",
+            "access": "private",
+            "tagname": "",
+            "class": "Using.Class",
+            "module": "Using.Class"
+        },
+        {
+            "file": "js\\using.class.0.1.js",
+            "line": 54,
+            "description": "用于将需要创建的类的类名",
+            "itemtype": "attribute",
+            "name": "F.fn.nick",
+            "type": "{String}",
+            "access": "private",
+            "tagname": "",
+            "class": "Using.Class",
+            "module": "Using.Class"
+        },
+        {
+            "file": "js\\using.class.0.1.js",
+            "line": 61,
+            "description": "代理 给需要代理的函数做this替换",
+            "itemtype": "attribute",
+            "name": "F.fn.proxy = F.proxy",
+            "type": "{Function}",
+            "params": [
+                {
+                    "name": "需要代理的函数",
+                    "description": "",
+                    "type": "Function"
+                }
+            ],
+            "return": {
+                "description": "已经设置好代理的新函数",
+                "type": "Function"
+            },
+            "access": "private",
+            "tagname": "",
+            "class": "Using.Class",
+            "module": "Using.Class"
+        },
+        {
+            "file": "js\\using.class.0.1.js",
+            "line": 72,
+            "description": "继承",
+            "itemtype": "attribute",
+            "name": "F.extend",
+            "type": "{Function}",
+            "params": [
+                {
+                    "name": "父类",
+                    "description": "",
+                    "type": "Function"
+                },
+                {
+                    "name": "是否需要覆盖相同的函数",
+                    "description": "默认为不覆盖",
+                    "type": "Boolean"
+                }
+            ],
+            "return": {
+                "description": "F",
+                "type": "Function"
+            },
+            "access": "private",
+            "tagname": "",
+            "class": "Using.Class",
+            "module": "Using.Class"
+        },
+        {
+            "file": "js\\using.class.0.1.js",
+            "line": 85,
+            "description": "创建类中的原型属性",
+            "itemtype": "attribute",
+            "name": "F.property",
+            "type": "{Function}",
+            "params": [
+                {
+                    "name": "类中需要添加的属性(JSON)",
+                    "description": "",
+                    "type": "Object"
+                },
+                {
+                    "name": "是否需要覆盖相同的属性",
+                    "description": "默认为不覆盖",
+                    "type": "Boolean"
+                }
+            ],
+            "return": {
+                "description": "F",
+                "type": "Function"
+            },
+            "access": "private",
+            "tagname": "",
+            "class": "Using.Class",
+            "module": "Using.Class"
+        },
+        {
+            "file": "js\\using.class.0.1.js",
+            "line": 98,
+            "description": "创建类的静态属性 通过类名直接调用 无需实例化",
+            "itemtype": "attribute",
+            "name": "F.static",
+            "type": "{Function}",
+            "params": [
+                {
+                    "name": "类需要添加的静态属性(JSON)",
+                    "description": "",
+                    "type": "Object"
+                },
+                {
+                    "name": "是否需要覆盖相同的属性",
+                    "description": "默认为不覆盖",
+                    "type": "Boolean"
+                }
+            ],
+            "return": {
+                "description": "F",
+                "type": "Function"
+            },
+            "access": "private",
+            "tagname": "",
+            "class": "Using.Class",
+            "module": "Using.Class"
+        },
+        {
+            "file": "js\\using.class.0.1.js",
+            "line": 111,
+            "description": "类的命名空间 推荐使用Using.Modules 以避免产生更多的全局变量",
+            "itemtype": "attribute",
+            "name": "F.namespace",
+            "type": "{Function}",
+            "params": [
+                {
+                    "name": "所属命名空间",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "F",
+                "type": "Function"
+            },
+            "access": "private",
+            "tagname": "",
+            "class": "Using.Class",
+            "module": "Using.Class"
+        }
+    ]
+}
